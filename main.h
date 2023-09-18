@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int print_string(char *ptr);
+int print_string(char *str);
 int _strlen(char *s);
 int print_int(int n);
 int print_unsi(unsigned int n);
