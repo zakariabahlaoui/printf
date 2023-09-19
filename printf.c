@@ -56,7 +56,6 @@ int _printf(const char *format, ...)
 			if (format[i] == '%')
 				len += print_char('%');
 			len += print_arg(format[i + 1], arg);
-			i++;
 		}
 		else
 			len += print_char(format[i]);
