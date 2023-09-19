@@ -1,27 +1,6 @@
 #include "main.h"
 
 /**
- * is_printble - check if the conversion specifiers exist
- * @c: the character for check
- *
- * Return: return 0 or 1
- */
-
-int is_printble(char c)
-{
-	char *str = "diuXxurp";
-	int i = 0;
-
-	while (str[i])
-	{
-		if (c == str[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-/**
  * print_arg - print the arg that take from main function
  * @c: the character
  * @arg: thr arg
@@ -76,24 +55,12 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
-			{
 				len += print_char('%');
-			}
-			else if (!is_printble(format[i]))
-			{
-				return (-1);
-			}
-			else if (format[i] != '\0')
-			{
-				len += print_arg(format[i], arg);
-				i++;
-			}
+			len += print_arg(format[i], arg);
 		}
 		else
-		{
 			len += print_char(format[i]);
-			i++;
-		}
+		i++;
 	}
 
 	va_end(arg);
