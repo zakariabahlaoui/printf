@@ -1,33 +1,52 @@
 #include "main.h"
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
 /**
- * peintf_octal - print the number  octal.
- * @numbre: numbre integer
+ * print_octal - print the number  octal.
+ * @num: numbre integer
  *
- * return: number octal.
+ * Return: return len.
  */
 
-void peintf_octal(int numbre)
+int print_octal(unsigned int num)
 {
-	char buffer[20];
-	int index = 0;
-	int chifoctal;
+	char buf[20];
+	unsigned int choct;
+	int i = 0;
+	int len = 0;
 
-	if (numbre == 0)
+	if (num == 0)
 	{
 		putchar('0');
-		return;
+
 	}
-	while (numbre > 0)
-	{
-		chifoctal = numbre % 8;
-		buffer[index++] = '0' + chifoctal;
-		numbre /= 8;
-	}
-	while (index > 0)
-	{
-		index--;
-		putchar(buffer[index]);
-	}
+		while (num > 0)
+		{
+			choct = num % 8;
+			buf[i++] = '0' + choct;
+			num /= 8;
+		}
+			while (i > 0)
+				{
+				i--;
+				putchar(buf[i]);
+				len++;
+				}
+				return (len);
+
+}
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int  main(void)
+{
+	unsigned int ui;
+
+	ui = (unsigned int)INT_MAX + 1024;
+
+	print_octal(ui);
+	return (0);
 }
