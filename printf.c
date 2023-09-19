@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
-	if (format == NULL || (format[0] == '%' && format[1] == 0))
+	if (format == NULL || (format[0] == '%' && format[1] == 0) || format[0] == 0)
 		return (-1);
 
 	len = 0;
@@ -53,9 +53,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			i++;
 			if (format[i] == '%')
 				len += print_char('%');
-			len += print_arg(format[i + 1], arg);
+			len += print_arg(format[i], arg);
 		}
 		else
 			len += print_char(format[i]);
