@@ -23,7 +23,11 @@ int print_arg(char c, va_list arg)
 		len += print_int(va_arg(arg, int));
 	if (c == 'u')
 		len += print_unsi(va_arg(arg, unsigned int));
-
+	else
+	{
+		len += print_char('%');
+		len += print_char(c);
+	}
 	return (len);
 }
 
@@ -43,7 +47,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
-	if (format == NULL || (format[0] == '%' && format[1] == 0) || format[0] == 0)
+	if (format == NULL || (format[0] == '%' && format[1] == 0))
 		return (-1);
 
 	len = 0;
@@ -56,12 +60,17 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '%')
 				len += print_char('%');
-			else
+			else if (format[i] != '\0')
+			{
 				len += print_arg(format[i], arg);
+				i++;
+			}
 		}
 		else
+		{
 			len += print_char(format[i]);
-		i++;
+			i++;
+		}
 	}
 
 	va_end(arg);
