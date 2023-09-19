@@ -1,43 +1,43 @@
 #include "main.h"
 /**
- * print_Hex - prints the number  hexadecimal.
+ * print_hex - prints the number an hexadecimal.
  * @num: numbre integer
+ * @c: string
  *
- * return: Length of the printed value.
+ * return: reteur len.
  */
-int print_Hex(unsigned int num, char c) 
+int print_hex(unsigned int num, char c)
 {
 	char buf[20];
-    intj = 0;
-    int chHex, len = 0;
-	
+	int j = 0;
+	int chHex, len = 0;
+
 	if (num == 0)
 	{
-        putchar('0');
-        return;
-    }
-	
-    while (num > 0)
+		putchar('0');
+		return;
+	}
+	while (num > 0)
 	{
-        chHex = num % 16;
-        if (chHex < 10)
+		chHex = num % 16;
+		if (chHex < 10)
 		{
-            buf[j++] = '0' + chHex;
-        }
-		else 
+			buf[j++] = '0' + chHex;
+		}
+		else
 		{
-		    if (c == 'x')
-		        buf[j++] = 'a' + (chHex - 10);
-            if (c == 'X')
-                buf[j++] = 'A' + (chHex - 10);
-        }
-        num /= 16;
-    }
-    while (j > 0)
+			if (c == 'x')
+				buf[j++] = 'a' + (chHex - 10);
+			if (c == 'X')
+				buf[j++] = 'A' + (chHex - 10);
+		}
+		num /= 16;
+	}
+	while (j > 0)
 	{
-        j--;
-        putchar(buf[j]);
+		j--;
+		putchar(buf[j]);
 		len++;
-    }
-return (len);
+	}
+	return (len);
 }
