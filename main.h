@@ -17,6 +17,6 @@ int print_unsi(unsigned int n);
 int print_char(int c);
 int print_hex(unsigned int num, char c);
 int print_octal(unsigned int num);
-int print_binary(int num);
+int print_binary(unsigned int num);
 
 #endif

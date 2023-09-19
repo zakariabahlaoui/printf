@@ -6,7 +6,7 @@
  *
  * Return: return len.
  */
-int print_binary(int num)
+int print_binary(unsigned int num)
 {
 	int bits[32];
 	int j, i = 0;
