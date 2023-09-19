@@ -1,52 +1,59 @@
 #include "main.h"
 
 /**
- * print_int - Function that prints an integer.
+ * ft_putnbr_fd_recursive - Function that prints an integer.
  * @n: int type number
- * Description: Can only use _putchar to print.
  *
- * Return: return lenght
+ * Return: is void
+ */
+void ft_putnbr_fd_recursive(unsigned int n)
+{
+	if (n > 9)
+		print_int(n / 10);
+	_putchar((n % 10) + '0');
+}
+
+/**
+ * ft_putnbr2 - Function
+ * @n: int type number
+ *
+ * Return: is void
+ */
+void ft_putnbr2(int n)
+{
+	if (n >= 0)
+		return (ft_putnbr_fd_recursive(n));
+
+	_putchar('-');
+	ft_putnbr_fd_recursive(n * -1);
+}
+
+/**
+ * print_int - Function
+ * @n: int type number
+ *
+ * Return: is void
  */
 
 int print_int(int n)
 {
-	int i, len;
-	char c[10];
+	int nb;
+	unsigned int i;
 
-	len = 0;
-
-	if (n == -2147483648)
+	nb = n;
+	i = 1;
+	if (n < 0 && n != -2147483648)
 	{
-		_putchar('-');
-		_putchar('2');
-		n = 147483648;
-		len += 2;
-	}
-
-	if (n < 0)
-	{
-		_putchar('-');
-		n = n * (-1);
-		len += 1;
-	}
-	if (n == 0)
-	{
-		_putchar('0');
-	}
-	i = 0;
-	while (n > 0)
-	{
-		c[i] = n % 10 + '0';
-		n = n / 10;
+		nb = -n;
 		i++;
 	}
-	len += i;
-	i--;
-	while (i >= 0)
+	while (nb > 9)
 	{
-		_putchar(c[i]);
-		i--;
+		nb = nb / 10;
+		i++;
 	}
-
-	return (len);
+	ft_putnbr2(n);
+	if (n == -2147483648)
+		return (11);
+	return (i);
 }
