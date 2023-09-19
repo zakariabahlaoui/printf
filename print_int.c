@@ -8,40 +8,45 @@
  * Return: return lenght
  */
 
-static void ft_putnbr_fd_recursive(unsigned int n)
-{
-	if (n > 9)
-		print_int(n / 10);
-	_putchar((n % 10) + '0');
-}
-
-void ft_putnbr2(int n)
-{
-	if (n >= 0)
-		return ft_putnbr_fd_recursive(n);
-
-	_putchar('-');
-	ft_putnbr_fd_recursive(n * -1);
-}
 int print_int(int n)
 {
-	int nb;
-	unsigned int i;
+	int i, len;
+	char c[10];
 
-	nb = n;
-	i = 1;
-	if (n < 0 && n != -2147483648)
-	{
-		nb = -n;
-		i++;
-	}
-	while (nb > 9)
-	{
-		nb = nb / 10;
-		i++;
-	}
-	ft_putnbr2(n);
+	len = 0;
+
 	if (n == -2147483648)
-		return (11);
-	return (i);
+	{
+		_putchar('-');
+		_putchar('2');
+		n = 147483648;
+		len += 2;
+	}
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n = n * (-1);
+		len += 1;
+	}
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	i = 0;
+	while (n > 0)
+	{
+		c[i] = n % 10 + '0';
+		n = n / 10;
+		i++;
+	}
+	len += i;
+	i--;
+	while (i >= 0)
+	{
+		_putchar(c[i]);
+		i--;
+	}
+
+	return (len);
 }
