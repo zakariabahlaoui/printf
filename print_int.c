@@ -10,7 +10,6 @@
 
 int print_int(int n)
 {
-	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
 	int i = 1;
 	int exp = 1;
