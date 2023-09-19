@@ -4,7 +4,7 @@
  * print_string - print string usin function write
  * @str: the string to print
  *
- * Return: retern len
+ * Return: return len
  *
  */
 

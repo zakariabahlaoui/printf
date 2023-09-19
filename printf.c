@@ -13,19 +13,19 @@ int print_arg(char c, va_list arg)
 {
 	int len;
 
-	len = 0;
+	len = -1;
 
 	if (c == 'c')
-		len += print_char(va_arg(arg, int));
-	if (c == 's')
-		len += print_string(va_arg(arg, char *));
-	if (c == 'd' || c == 'i')
-		len += print_int(va_arg(arg, int));
-	if (c == 'u')
-		len += print_unsi(va_arg(arg, unsigned int));
-	else
+		len = print_char(va_arg(arg, int));
+	else if (c == 's')
+		len = print_string(va_arg(arg, char *));
+	else if (c == 'd' || c == 'i')
+		len = print_int(va_arg(arg, int));
+	else if (c == 'u')
+		len = print_unsi(va_arg(arg, unsigned int));
+	else if (c != ' ')
 	{
-		len += print_char('%');
+		len = print_char('%');
 		len += print_char(c);
 	}
 	return (len);
