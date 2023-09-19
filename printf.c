@@ -27,6 +27,8 @@ int print_arg(char c, va_list arg)
 		len = print_hex(va_arg(arg, unsigned int), c);
 	else if (c == 'o')
 		len = print_octal(va_arg(arg, unsigned int));
+	else if (c == 'b')
+		len = print_binary(va_arg(arg, int));
 	else if (c != ' ')
 	{
 		len = print_char('%');
