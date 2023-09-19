@@ -14,5 +14,6 @@ int _strlen(char *s);
 int print_int(int n);
 int print_unsi(unsigned int n);
 int print_char(int c);
+int print_Hex(unsigned int num, char c);
 
 #endif

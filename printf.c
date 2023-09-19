@@ -28,6 +28,8 @@ int print_arg(char c, va_list arg)
 		len = print_char('%');
 		len += print_char(c);
 	}
+	else if (c == 'x' || c == 'X')
+		len = print_hex(va_arg(arg, unsigned int), c);
 	return (len);
 }
 
