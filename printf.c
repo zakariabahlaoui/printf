@@ -23,13 +23,14 @@ int print_arg(char c, va_list arg)
 		len = print_int(va_arg(arg, int));
 	else if (c == 'u')
 		len = print_unsi(va_arg(arg, unsigned int));
+	else if (c == 'x' || c == 'X')
+		len = print_hex(va_arg(arg, unsigned int), c);
 	else if (c != ' ')
 	{
 		len = print_char('%');
 		len += print_char(c);
 	}
-	else if (c == 'x' || c == 'X')
-		len = print_hex(va_arg(arg, unsigned int), c);
+
 	return (len);
 }
 

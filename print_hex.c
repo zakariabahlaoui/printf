@@ -4,18 +4,19 @@
  * @num: numbre integer
  * @c: string
  *
- * return: reteur len.
+ * Return: reteur len.
  */
+
 int print_hex(unsigned int num, char c)
 {
 	char buf[20];
-	int j = 0;
-	int chHex, len = 0;
+	unsigned int j = 0;
+	unsigned int chHex;
+	unsigned int len = 0;
 
 	if (num == 0)
 	{
-		putchar('0');
-		return;
+		_putchar('0');
 	}
 	while (num > 0)
 	{
@@ -36,7 +37,7 @@ int print_hex(unsigned int num, char c)
 	while (j > 0)
 	{
 		j--;
-		putchar(buf[j]);
+		_putchar(buf[j]);
 		len++;
 	}
 	return (len);

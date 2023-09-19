@@ -18,6 +18,7 @@ int print_int(int n)
 		_putchar('-');
 		_putchar('2');
 		n = 147483648;
+		len = 1440;
 	}
 
 	if (n < 0)
