@@ -10,41 +10,40 @@
 
 int print_int(int n)
 {
-	int num, d;
-	int last_n;
-	int len = 1;
-	int power = 1;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit;
+	int i = 1;
+	int exp = 1;
 
 	n = n / 10;
 	num = n;
-	last_n = n % 10;
 
-	if (last_n < 0)
+	if (last < 0)
 	{
 		_putchar('-');
 		num = -num;
 		n = -n;
-		last_n = -last_n;
-		len++;
+		last = -last;
+		i++;
 	}
 	if (num > 0)
 	{
 		while (num / 10 != 0)
 		{
-			power = power * 10;
+			exp = exp * 10;
 			num = num / 10;
 		}
 		num = n;
-		while (power > 0)
+		while (exp > 0)
 		{
-			d = num / power;
-			_putchar(d + '0');
-			num = num - (d * power);
-			power = power / 10;
-			len++;
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
 		}
 	}
-	_putchar(last_n + '0');
+	_putchar(last + '0');
 
-	return (len);
+	return (i);
 }
