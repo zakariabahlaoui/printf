@@ -19,34 +19,18 @@ int print_octal(unsigned int num)
 	if (num == 0)
 	{
 		putchar('0');
-
 	}
-		while (num > 0)
-		{
-			choct = num % 8;
-			buf[i++] = '0' + choct;
-			num /= 8;
-		}
-			while (i > 0)
-				{
-				i--;
-				putchar(buf[i]);
-				len++;
-				}
-				return (len);
-
-}
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int  main(void)
-{
-	unsigned int ui;
-
-	ui = (unsigned int)INT_MAX + 1024;
-
-	print_octal(ui);
-	return (0);
+	while (num > 0)
+	{
+		choct = num % 8;
+		buf[i++] = '0' + choct;
+		num /= 8;
+	}
+	while (i > 0)
+	{
+		i--;
+		putchar(buf[i]);
+		len++;
+	}
+	return (len);
 }
