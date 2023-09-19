@@ -14,7 +14,7 @@ int print_binary(int num)
 
 	if (num == 0)
 	{
-		putchar('0');
+		_putchar('0');
 	}
 	while (num > 0)
 	{
@@ -24,7 +24,7 @@ int print_binary(int num)
 	}
 	for (j = i - 1; j >= 0; j--)
 	{
-		putchar(bits[j] ? '1' : '0');
+		_putchar(bits[j] ? '1' : '0');
 		len++;
 	}
 	return (len);

@@ -18,7 +18,7 @@ int print_octal(unsigned int num)
 
 	if (num == 0)
 	{
-		putchar('0');
+		_putchar('0');
 	}
 	while (num > 0)
 	{
@@ -29,7 +29,7 @@ int print_octal(unsigned int num)
 	while (i > 0)
 	{
 		i--;
-		putchar(buf[i]);
+		_putchar(buf[i]);
 		len++;
 	}
 	return (len);
