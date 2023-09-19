@@ -10,39 +10,41 @@
 
 int print_int(int n)
 {
-	int num, last = n % 10, digit;
-	int i = 1;
-	int exp = 1;
+	int num;
+	int last_n = n % 10;
+	int d;
+	int len = 1;
+	int powr = 1;
 
 	n = n / 10;
 	num = n;
 
-	if (last < 0)
+	if (last_n < 0)
 	{
 		_putchar('-');
 		num = -num;
 		n = -n;
-		last = -last;
-		i++;
+		last_n = -last_n;
+		len++;
 	}
 	if (num > 0)
 	{
 		while (num / 10 != 0)
 		{
-			exp = exp * 10;
+			powr = powr * 10;
 			num = num / 10;
 		}
 		num = n;
-		while (exp > 0)
+		while (powr > 0)
 		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
+			d = num / powr;
+			_putchar(d + '0');
+			num = num - (d * powr);
+			powr = powr / 10;
+			len++;
 		}
 	}
-	_putchar(last + '0');
+	_putchar(last_n + '0');
 
-	return (i);
+	return (len);
 }
