@@ -1,7 +1,5 @@
 #include "main.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <limits.h>
+
 /**
  * print_octal - print the number  octal.
  * @num: numbre integer
