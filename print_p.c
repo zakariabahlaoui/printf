@@ -14,7 +14,7 @@ int print_p(unsigned long num)
 	int len;
 
 	if (!num)
-		return print_string("(nil)");
+		return (print_string("(nil)"));
 
 	len = print_string("0x");
 	i = 0;
