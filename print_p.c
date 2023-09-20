@@ -14,7 +14,10 @@ int print_p(unsigned long num)
 	unsigned int len = 0;
 
 	if (!num)
+	{
 		write(1, "nil", 3);
+		return (3);
+	}
 
 	_putchar('0');
 	_putchar('x');
