@@ -6,7 +6,7 @@
  * Return: reteur len.
  */
 
-int print_p(unsigned int num)
+int print_p(unsigned long long num)
 {
 	char buf[20];
 	unsigned int j = 0;
