@@ -13,7 +13,7 @@ int print_p(unsigned long num)
 	unsigned int ch;
 	unsigned int len = 0;
 
-	if (num == NULL)
+	if (!num)
 		write(1, "nil", 3);
 
 	_putchar('0');
