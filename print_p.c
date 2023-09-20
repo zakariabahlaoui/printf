@@ -27,6 +27,7 @@ int print_p(unsigned long num)
 	if (num == 0)
 	{
 		_putchar('0');
+		len += 1;
 	}
 	while (num > 0)
 	{
