@@ -15,8 +15,8 @@ int print_p(unsigned long num)
 
 	if (!num)
 	{
-		write(1, "nil", 3);
-		return (3);
+		write(1, "(nil)", 3);
+		return (5);
 	}
 
 	_putchar('0');
