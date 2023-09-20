@@ -30,7 +30,7 @@ int print_arg(char c, va_list arg)
 	else if (c == 'b')
 		len = print_binary(va_arg(arg, unsigned int));
 	else if (c == 'p')
-		len = print_p(va_arg(arg, long));
+		len = print_p(va_arg(arg, void *));
 	else if (c == 'r')
 		len = print_r(va_arg(arg, char *));
 	else if (c != ' ')
