@@ -8,7 +8,7 @@
  */
 int print_binary(unsigned int num)
 {
-	int bits[32];
+	int bi[32];
 	int j, i = 0;
 	int len = 0;
 
@@ -18,13 +18,13 @@ int print_binary(unsigned int num)
 	}
 	while (num > 0)
 	{
-		bits[i] = num % 2;
+		bi[i] = num % 2;
 		num /= 2;
 		i++;
 	}
 	for (j = i - 1; j >= 0; j--)
 	{
-		_putchar(bits[j] ? '1' : '0');
+		_putchar(bi[j] ? '1' : '0');
 		len++;
 	}
 	return (len);
