@@ -13,6 +13,8 @@ int print_r(char *s)
 	char tmp;
 	int i, j;
 
+	if (s == NULL)
+		s = "(null)";
 	j = 0;
 	while (s[j])
 		j++;
