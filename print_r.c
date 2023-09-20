@@ -14,7 +14,10 @@ int print_r(char *s)
 	int i, j, len;
 
 	if (s == NULL)
-		s = "(null)";
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	j = 0;
 	while (s[j])
 		j++;
