@@ -11,13 +11,14 @@
 int print_r(char *s)
 {
 	char tmp;
-	int i, j;
+	int i, j, len;
 
 	if (s == NULL)
 		s = "(null)";
 	j = 0;
 	while (s[j])
 		j++;
+	len = j;
 
 	i = 0;
 	j--;
@@ -30,5 +31,5 @@ int print_r(char *s)
 		j--;
 	}
 
-	return (i);
+	return (len);
 }
