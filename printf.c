@@ -31,6 +31,8 @@ int print_arg(char c, va_list arg)
 		len = print_binary(va_arg(arg, unsigned int));
 	else if (c == 'p')
 		len = print_p(va_arg(arg, long));
+	else if (c == 'r')
+		len = print_r(va_arg(arg, char *));
 	else if (c != ' ')
 	{
 		len = print_char('%');

@@ -19,5 +19,6 @@ int print_hex(unsigned int num, char c);
 int print_octal(unsigned int num);
 int print_binary(unsigned int num);
 int print_p(unsigned long num);
+int print_r(char *s);
 
 #endif
