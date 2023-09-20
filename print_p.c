@@ -8,45 +8,29 @@
 
 int print_p(unsigned long num)
 {
-	char buf[20];
-	unsigned int j = 0;
-	unsigned int ch;
-	unsigned int len = 0;
-
-	if (!num)
-	{
-		write(1, "(nil)", 3);
-		return (5);
-	}
-
-	_putchar('0');
-	_putchar('x');
-
-	len = 2;
+	char *str = "0123456789abcdef";
+	char buffer[20];
+	int i;
+	int len;
 
 	if (num == 0)
+		return print_string("(nil)");
+
+	len = print_string("0x");
+	i = 0;
+	while (num)
 	{
-		_putchar('0');
-		len += 1;
-	}
-	while (num > 0)
-	{
-		ch = num % 16;
-		if (ch < 10)
-		{
-			buf[j++] = '0' + ch;
-		}
-		else
-		{
-			buf[j++] = 'a' + (ch - 10);
-		}
+		buffer[i] = str[num % 16];
 		num /= 16;
+		i++;
 	}
-	while (j > 0)
+
+	i--;
+	while (i >= 0)
 	{
-		j--;
-		_putchar(buf[j]);
-		len++;
+		len += _putchar(buffer[i]);
+		i--;
 	}
+
 	return (len);
 }
