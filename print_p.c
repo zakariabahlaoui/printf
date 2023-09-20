@@ -13,7 +13,7 @@ int print_p(unsigned long num)
 	int i;
 	int len;
 
-	if (num == 0)
+	if (!num)
 		return print_string("(nil)");
 
 	len = print_string("0x");
