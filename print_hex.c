@@ -17,6 +17,7 @@ int print_hex(unsigned int num, char c)
 	if (num == 0)
 	{
 		_putchar('0');
+		return (1);
 	}
 	while (num > 0)
 	{
