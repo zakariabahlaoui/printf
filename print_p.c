@@ -1,18 +1,22 @@
 #include "main.h"
 /**
- * print_hex - prints the number an hexadecimal.
+ * print_p - prints the number an hexadecimal.
  * @num: numbre integer
- * @c: string
  *
  * Return: reteur len.
  */
 
-int print_hex(unsigned int num, char c)
+int print_p(unsigned int num)
 {
 	char buf[20];
 	unsigned int j = 0;
 	unsigned int ch;
 	unsigned int len = 0;
+
+	_putchar('0');
+	_putchar('x');
+
+	len = 2;
 
 	if (num == 0)
 	{
@@ -27,10 +31,7 @@ int print_hex(unsigned int num, char c)
 		}
 		else
 		{
-			if (c == 'x')
-				buf[j++] = 'a' + (ch - 10);
-			if (c == 'X')
-				buf[j++] = 'A' + (ch - 10);
+			buf[j++] = 'a' + (ch - 10);
 		}
 		num /= 16;
 	}
