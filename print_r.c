@@ -23,7 +23,6 @@ int print_r(char *s)
 		i--;
 		_putchar(s[i]);
 	}
-	_putchar('\n');
 
 	return (len);
 }
