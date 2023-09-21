@@ -21,5 +21,6 @@ int print_binary(unsigned int num);
 int print_p(unsigned long num);
 int print_r(char *s);
 int print_just_printbale(char *s);
+int print_rot13(char *ptr);
 
 #endif
