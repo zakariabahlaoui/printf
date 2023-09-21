@@ -20,5 +20,6 @@ int print_octal(unsigned int num);
 int print_binary(unsigned int num);
 int print_p(unsigned long num);
 int print_r(char *s);
+int print_just_printbale(char *s, char c);
 
 #endif
