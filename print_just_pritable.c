@@ -7,7 +7,6 @@
 
 int print_just_printbale(char *s)
 {
-	char *s;
 	int i, len = 0;
 	int hex;
 
