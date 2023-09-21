@@ -35,6 +35,8 @@ int print_arg(char c, va_list arg)
 		len = print_r(va_arg(arg, char *));
 	else if (c == 'S')
 		len = print_just_printbale(va_arg(arg, char *));
+	else if (c == 'R')
+		len = print_rot13(va_arg(arg, char*));
 	else if (c != ' ')
 	{
 		len = print_char('%');
