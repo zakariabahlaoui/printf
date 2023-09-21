@@ -25,7 +25,7 @@ int print_just_printbale(char *s)
 				_putchar('0');
 				len++;
 			}
-			len = len + print_hex(hex, 'x');
+			len = len + print_hex(hex, 'X');
 		}
 		else
 		{
