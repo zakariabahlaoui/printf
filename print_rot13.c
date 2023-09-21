@@ -23,7 +23,7 @@ int print_rot13(char *ptr)
 			c = c + ('A' - 'a');
 		}
 		ptr++;
-		putchar(c);
+		_putchar(c);
 		len++;
 	}
 	return (len);
